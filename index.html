@@ -140,6 +140,7 @@
       }
 
       carousel.addEventListener('pointerdown', (event) => {
+        if (event.target.closest('button')) return;
         isDragging = true;
         startX = event.clientX;
         dragX = 0;
@@ -156,8 +157,16 @@
 
       carousel.addEventListener('pointerup', finishDrag);
       carousel.addEventListener('pointercancel', finishDrag);
-      previous.addEventListener('click', () => goTo(current - 1));
-      next.addEventListener('click', () => goTo(current + 1));
+      previous.addEventListener('pointerdown', (event) => event.stopPropagation());
+      next.addEventListener('pointerdown', (event) => event.stopPropagation());
+      previous.addEventListener('click', (event) => {
+        event.stopPropagation();
+        goTo(current - 1);
+      });
+      next.addEventListener('click', (event) => {
+        event.stopPropagation();
+        goTo(current + 1);
+      });
 
       window.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowLeft') goTo(current - 1);
