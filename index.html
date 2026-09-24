@@ -32,13 +32,13 @@
 
       <section class="carousel" aria-roledescription="carousel" aria-label="QLOCKTWO product collection">
         <div class="slides" id="slides">
-          <figure class="slide"><img src="./assets/01-earth-13.5-D1gD8Buh.jpg" alt="QLOCKTWO EARTH 13.5 in a contemporary UAE interior" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/02-earth-45-BitoMoSp.jpg" alt="QLOCKTWO EARTH 45 in a refined UAE setting" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/03-earth-90-UxDvBc5P.jpg" alt="QLOCKTWO EARTH 90 at architectural scale" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/04-earth-180-DJwSRJWO.jpg" alt="QLOCKTWO EARTH 180 as a monumental interior artwork" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/05-moon-90-BrEdI1YE.jpg" alt="QLOCKTWO MOON 90 in Abu Dhabi" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/06-moon-180-D5NrdVFr.jpg" alt="QLOCKTWO MOON 180 in Dubai" draggable="false"></figure>
-          <figure class="slide"><img src="./assets/07-w-38-DqAQhHCz.jpg" alt="QLOCKTWO W wristwatch" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/01-earth-13.5-w8MxMePC.jpg" alt="QLOCKTWO EARTH 13.5 in a contemporary UAE interior" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/02-earth-45-BYAfvlIb.jpg" alt="QLOCKTWO EARTH 45 in a refined UAE setting" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/03-earth-90-BG0anLu2.jpg" alt="QLOCKTWO EARTH 90 at architectural scale" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/04-earth-180-DRm9tukJ.jpg" alt="QLOCKTWO EARTH 180 as a monumental interior artwork" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/05-moon-90-C9X6UjXO.jpg" alt="QLOCKTWO MOON 90 in Abu Dhabi" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/06-moon-180-0AGUAP5I.jpg" alt="QLOCKTWO MOON 180 in Dubai" draggable="false"></figure>
+          <figure class="slide"><img src="./assets/07-w-38-B_y-J4w6.jpg" alt="QLOCKTWO W wristwatch" draggable="false"></figure>
         </div>
         <div class="counter" aria-live="polite"><span id="current-slide">1</span>/7</div>
         <button class="nav-button previous" id="previous" type="button" aria-label="Previous slide">
@@ -140,7 +140,6 @@
       }
 
       carousel.addEventListener('pointerdown', (event) => {
-        if (event.target.closest('button')) return;
         isDragging = true;
         startX = event.clientX;
         dragX = 0;
@@ -157,16 +156,8 @@
 
       carousel.addEventListener('pointerup', finishDrag);
       carousel.addEventListener('pointercancel', finishDrag);
-      previous.addEventListener('pointerdown', (event) => event.stopPropagation());
-      next.addEventListener('pointerdown', (event) => event.stopPropagation());
-      previous.addEventListener('click', (event) => {
-        event.stopPropagation();
-        goTo(current - 1);
-      });
-      next.addEventListener('click', (event) => {
-        event.stopPropagation();
-        goTo(current + 1);
-      });
+      previous.addEventListener('click', () => goTo(current - 1));
+      next.addEventListener('click', () => goTo(current + 1));
 
       window.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowLeft') goTo(current - 1);
