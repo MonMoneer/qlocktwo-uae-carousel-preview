@@ -6,7 +6,15 @@
   <meta name="theme-color" content="#fafafa">
   <meta name="description" content="QLOCKTWO UAE — Instagram carousel client preview">
   <title>QLOCKTWO UAE — Carousel Preview</title>
-  <link rel="stylesheet" crossorigin href="./assets/index-lr4tu1bU.css">
+  <link rel="stylesheet" href="./assets/index-lr4tu1bU.css">
+  <style>
+    .slide img { object-fit: contain; }
+    .nav-button { z-index: 2; touch-action: manipulation; }
+    .nav-button svg { pointer-events: none; }
+    .share-preview { border: 1px solid #dbdbdb; border-radius: 20px; padding: 9px 16px; background: #fff; color: #262626; cursor: pointer; }
+    .share-status { min-height: 18px; margin: 0; color: #737373; font-size: 12px; text-align: center; }
+    @media (max-width: 540px) { .nav-button { display: grid; width: 30px; height: 30px; } .share-preview { display: block; margin: 16px auto 8px; } }
+  </style>
 </head>
 <body>
   <main class="page-shell">
@@ -33,35 +41,28 @@
       <section class="carousel" aria-roledescription="carousel" aria-label="QLOCKTWO product collection">
         <div class="slides" id="slides">
           <figure class="slide">
-            <img src="./assets/01-earth-13.5-w8MxMePC.jpg" alt="QLOCKTWO EARTH 13.5 in a contemporary UAE interior" draggable="false">
-            <figcaption class="product-label"><strong>EARTH</strong><span>THIRTEEN POINT FIVE CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/01_EARTH180_Rust.jpg" alt="QLOCKTWO EARTH 180 Rust, 180 × 180 CM, in an Emirati majlis" width="2160" height="2700" fetchpriority="high" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/02-earth-45-BYAfvlIb.jpg" alt="QLOCKTWO EARTH 45 in a refined UAE setting" draggable="false">
-            <figcaption class="product-label product-label--light"><strong>EARTH</strong><span>FORTY-FIVE CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/02_EARTH90_Glintscape.jpg" alt="QLOCKTWO EARTH 90 Glintscape, 90 × 90 CM, in the living room" width="2160" height="2700" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/03-earth-90-BG0anLu2.jpg" alt="QLOCKTWO EARTH 90 at architectural scale" draggable="false">
-            <figcaption class="product-label product-label--light"><strong>EARTH</strong><span>NINETY CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/03_EARTH45_StainlessSteel.jpg" alt="QLOCKTWO EARTH 45 Stainless Steel, 45 × 45 CM, in the kitchen" width="2160" height="2700" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/04-earth-180-DRm9tukJ.jpg" alt="QLOCKTWO EARTH 180 as a monumental interior artwork" draggable="false">
-            <figcaption class="product-label"><strong>EARTH</strong><span>ONE HUNDRED AND EIGHTY CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/04_EARTH13.5_Rust.jpg" alt="QLOCKTWO EARTH 13.5 Rust, 13.5 × 13.5 CM, beside the bed" width="2160" height="2700" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/05-moon-90-C9X6UjXO.jpg" alt="QLOCKTWO MOON 90 in Abu Dhabi" draggable="false">
-            <figcaption class="product-label product-label--light"><strong>MOON</strong><span>NINETY CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/05_MOON180_Nightfall-MoonGold.jpg" alt="QLOCKTWO MOON 180 Nightfall Moon Gold" width="2160" height="2700" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/06-moon-180-0AGUAP5I.jpg" alt="QLOCKTWO MOON 180 in Dubai" draggable="false">
-            <figcaption class="product-label"><strong>MOON</strong><span>ONE HUNDRED AND EIGHTY CM</span></figcaption>
+            <img src="./assets/final-2026-09-28/06_MOON90_Midnight-Gold.jpg" alt="QLOCKTWO MOON 90 Midnight Gold" width="2160" height="2700" draggable="false">
           </figure>
           <figure class="slide">
-            <img src="./assets/07-w-38-B_y-J4w6.jpg" alt="QLOCKTWO W wristwatch" draggable="false">
-            <figcaption class="product-label"><strong>QLOCKTWO W</strong><span>THIRTY-EIGHT MM</span></figcaption>
+            <img src="./assets/final-2026-09-28/08_W_BlackSteel_English.jpg" alt="QLOCKTWO W Black Steel wristwatch with English face" width="2160" height="2700" draggable="false">
           </figure>
         </div>
-        <div class="counter" aria-live="polite"><span id="current-slide">1</span>/7</div>
+        <div class="counter" aria-live="polite"><span id="current-slide">1</span>/<span id="total-slides">7</span></div>
         <button class="nav-button previous" id="previous" type="button" aria-label="Previous slide">
           <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
@@ -94,17 +95,19 @@
 
         <p class="likes"><span id="likes-count">1,248</span> likes</p>
         <div class="caption">
-          <p><strong>qlocktwo_uae</strong> A new sense of time, in every scale.</p>
-          <p>Discover the QLOCKTWO collections — from the compact EARTH thirteen point five and QLOCKTWO W to the architectural presence of EARTH and MOON in one hundred and eighty CM. Each piece is handcrafted in Germany and available in a considered selection of materials and finishes.</p>
-          <p>Explore the collection in the UAE.</p>
+          <p><strong>qlocktwo_uae</strong> A new perspective on time.</p>
+          <p>Discover QLOCKTWO EARTH, MOON and W — distinctive finishes and dimensions, from a personal detail to a statement within your home.</p>
+          <p>Swipe to explore the collection.</p>
         </div>
-        <p class="hashtags">#QLOCKTWO #QLOCKTWOUAE #ArtOfTime #MadeInGermany</p>
+        <p class="hashtags">#QLOCKTWO #QLOCKTWOUAE</p>
         <button class="comments" type="button">View all comments</button>
-        <time datetime="2026-09-23">SEPTEMBER 23</time>
+        <time datetime="2026-09-28">SEPTEMBER 28</time>
       </section>
     </article>
 
     <p class="swipe-note">Swipe or use the arrows to preview the full carousel</p>
+    <button class="share-preview" id="share-preview" type="button">Copy preview link</button>
+    <p class="share-status" id="share-status" role="status"></p>
   </main>
   <script>
     (() => {
@@ -118,6 +121,7 @@
       const likesCount = document.querySelector('#likes-count');
       const heartBurst = document.querySelector('#heart-burst');
       const totalSlides = slides.children.length;
+      document.querySelector('#total-slides').textContent = totalSlides;
       let current = 0;
       let startX = 0;
       let dragX = 0;
@@ -127,6 +131,7 @@
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'dot';
+        dot.setAttribute('role', 'tab');
         dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
         dot.addEventListener('click', () => goTo(index));
         dots.append(dot);
@@ -161,6 +166,7 @@
       }
 
       carousel.addEventListener('pointerdown', (event) => {
+        if (event.target.closest('button') || !event.isPrimary || event.button !== 0) return;
         isDragging = true;
         startX = event.clientX;
         dragX = 0;
@@ -176,7 +182,8 @@
       });
 
       carousel.addEventListener('pointerup', finishDrag);
-      carousel.addEventListener('pointercancel', finishDrag);
+      carousel.addEventListener('pointercancel', () => { isDragging = false; dragX = 0; slides.classList.remove('dragging'); update(); });
+      carousel.addEventListener('lostpointercapture', finishDrag);
       previous.addEventListener('click', () => goTo(current - 1));
       next.addEventListener('click', () => goTo(current + 1));
 
@@ -198,7 +205,15 @@
       }
 
       like.addEventListener('click', () => setLiked(!like.classList.contains('liked')));
-      carousel.addEventListener('dblclick', () => setLiked(true, true));
+      carousel.addEventListener('dblclick', (event) => { if (!event.target.closest('button')) setLiked(true, true); });
+      async function sharePreview() {
+        const url = 'https://monmoneer.github.io/qlocktwo-uae-carousel-preview/?v=20260928';
+        const status = document.querySelector('#share-status');
+        try { await navigator.clipboard.writeText(url); status.textContent = 'Link copied — ready to share.'; }
+        catch { status.textContent = url; }
+      }
+      document.querySelector('#share-preview').addEventListener('click', sharePreview);
+      document.querySelector('[aria-label="Share"]').addEventListener('click', sharePreview);
       update();
     })();
   </script>
