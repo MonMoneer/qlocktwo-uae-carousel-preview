@@ -49,13 +49,13 @@
       <section class="carousel" aria-roledescription="carousel" aria-label="QLOCKTWO material inspiration videos">
         <div class="slides" id="slides">
           <figure class="slide">
-            <video src="./videos/01-vintage-copper.mp4" poster="./videos/01-vintage-copper.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="VINTAGE COPPER — the product and its material inspiration"></video>
+            <video src="./videos/revised-v2/01-vintage-copper.mp4" poster="./videos/revised-v2/01-vintage-copper.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="VINTAGE COPPER — the product and its material inspiration"></video>
           </figure>
           <figure class="slide">
-            <video src="./videos/02-rust.mp4" poster="./videos/02-rust.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="RUST — the product and its material inspiration"></video>
+            <video src="./videos/revised-v2/02-rust.mp4" poster="./videos/revised-v2/02-rust.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="RUST — the product and its material inspiration"></video>
           </figure>
           <figure class="slide">
-            <video src="./videos/03-silver-and-gold.mp4" poster="./videos/03-silver-and-gold.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="SILVER &amp; GOLD — the product and its material inspiration"></video>
+            <video src="./videos/revised-v2/03-silver-and-gold.mp4" poster="./videos/revised-v2/03-silver-and-gold.jpg" width="1080" height="1440" preload="metadata" muted playsinline loop aria-label="SILVER &amp; GOLD — the product and its material inspiration"></video>
           </figure>
         </div>
         <div class="counter" aria-live="polite"><span id="current-slide">1</span>/<span id="total-slides">3</span></div>
@@ -252,7 +252,7 @@
       like.addEventListener('click', () => setLiked(!like.classList.contains('liked')));
       carousel.addEventListener('dblclick', (event) => { if (!event.target.closest('button')) setLiked(true, true); });
       async function sharePreview() {
-        const url = 'https://monmoneer.github.io/qlocktwo-uae-carousel-preview/material-inspiration-20261014/';
+        const url = 'https://monmoneer.github.io/qlocktwo-uae-carousel-preview/material-inspiration-20261014/?v=2';
         const status = document.querySelector('#share-status');
         try { await navigator.clipboard.writeText(url); status.textContent = 'Link copied — ready to share.'; }
         catch { status.textContent = url; }
